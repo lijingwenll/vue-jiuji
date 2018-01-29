@@ -85,4 +85,8 @@
 @import '../assets/iconfont/iconfont.css';
 @import '../assets/style/classification.css';
 @import '../assets/style/reset.css'
+
+</script>
+
+<style scoped>
 </style>

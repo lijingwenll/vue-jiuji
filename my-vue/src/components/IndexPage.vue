@@ -1,11 +1,13 @@
 <template>
+  <div class="hello">
 
+  </div>
 </template>
 
 <script>
 	
 export default {
-  name: 'HelloWorld',
+  name: 'IndexPage',
   data () {
     return {
     	
@@ -13,7 +15,6 @@ export default {
   }
 }
 </script>
-
 
 <style scoped>
 
