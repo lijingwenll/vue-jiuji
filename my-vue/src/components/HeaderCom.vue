@@ -2,7 +2,10 @@
   <div class="box">
     <!-- 定位 -->
     <div class="pos">
-      
+      <div>
+        昌平区
+        <i></i>
+      </div>
     </div>
   </div>
 </template>
