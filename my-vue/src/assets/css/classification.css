@@ -13,6 +13,7 @@ ul,li,ol{
 a{
 	text-decoration: none;
 }
+/*nav部分*/
 #nav{
 	height: 0.88rem;
 	border-bottom: 1px solid #ccc;
@@ -50,34 +51,52 @@ a{
 	font-weight: 600;
 }
 
-
+/*main部分*/
 #main{
-	flex: 1;
 	display: flex;
 	justify-content: space-between;
 }
-.main-l{
-	width: 22%;
-	background: #ccc;
-	/*overflow: auto;*/
-}
-.main-r{
-	width: 78%;
-	background: green;
-}
 .main-l a{
+	display: flex;
+	align-items: center;
+	width: 1.2rem;
+	height: 1rem;
 	padding: 0 8px;
 	border-bottom: 1px solid #e3e3e3;
+	border-right: 1px solid #e3e3e3;
+	
 }
 .main-l a span{
 	font-size: 14px;
 	color: #000;
 }
-
-
-
-
-#footer{
-	height: 50px;
-	background: red;
+.main-r{
 }
+.main-r-t>a{
+	display: block;
+	width: 4.62rem;
+	margin: 10px auto 0;
+	
+}
+.main-r-t>a>img{
+	width: 4.4rem;
+	height: 1.493199rem;
+	
+}
+#span-t{
+	font-size: 12px;
+	font-weight: 700;
+	height: 30px;
+	line-height: 30px;
+}
+.ull{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+/*footer部分*/
+
+
