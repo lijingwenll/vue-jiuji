@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,li,ol{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+#nav{
+	height: 0.88rem;
+	border-bottom: 1px solid #ccc;
+}
+#nav ul{
+	display: flex;
+	justify-content: space-around;
+	height: 0.88rem;
+}
+#nav ul li{
+	height: 0.88rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#nav ul li a {
+	display: flex;
+	align-items: center;
+}
+.nav-c{
+	display: flex;
+	width: 4.60rem;
+	height: 0.66rem;
+	background: #e3e3e3;
+	border-radius: 0.1rem;
+	align-items: center;
+	padding-left: 0.1rem;
+}
+.icon-sousuo{
+	color: #9c9c9c;
+}
+.icon-houtui,.icon-more{
+	color: #000;
+	font-size: 0.4rem;
+	font-weight: 600;
+}
+
+
+#main{
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+.main-l{
+	width: 22%;
+	background: #ccc;
+	/*overflow: auto;*/
+}
+.main-r{
+	width: 78%;
+	background: green;
+}
+.main-l a{
+	padding: 0 8px;
+	border-bottom: 1px solid #e3e3e3;
+}
+.main-l a span{
+	font-size: 14px;
+	color: #000;
+}
+
+
+
+
+#footer{
+	height: 50px;
+	background: red;
+}
