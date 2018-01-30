@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <IndexPage></IndexPage>
-
     <router-view/>
     <FooterCom></FooterCom>
   </div>
