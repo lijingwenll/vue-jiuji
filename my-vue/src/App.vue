@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-view/>
-    <FooterCom></FooterCom>
+  <FooterCom></FooterCom>
+  <router-view/>
   </div>
   
 </template>

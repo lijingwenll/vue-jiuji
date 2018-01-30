@@ -43,10 +43,7 @@
   }
 </script>
 <style scoped>
-.box{
-  height:1.54rem;
-  background:#fff;
-}
+
 .btm{
   width:100%;
   height:1rem;
