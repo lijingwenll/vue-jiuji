@@ -27,10 +27,12 @@
           <i class="iconfont icon-shouye1"></i>
           <p>首页</p>
         </li>
+        <router-link to='/class'>
         <li>
           <i class="iconfont icon-fenlei"></i>
           <p>分类</p>
         </li>
+        </router-link>
         <li>
           <i class="iconfont icon-xiaoxi"></i>
           <p>消息</p>
