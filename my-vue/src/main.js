@@ -15,6 +15,7 @@ Vue.use(MintUI);
 new Vue({
   el: '#app',
   router,
+  MintUI,
   components: { App },
   template: '<App/>'
 })
