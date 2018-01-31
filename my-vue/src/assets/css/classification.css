@@ -1,4 +1,4 @@
-body{
+html,body{
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -16,12 +16,12 @@ a{
 /*nav部分*/
 #nav{
 	height: 0.88rem;
-	border-bottom: 1px solid #ccc;
 }
 #nav ul{
 	display: flex;
 	justify-content: space-around;
 	height: 0.88rem;
+	position: relative;
 }
 #nav ul li{
 	height: 0.88rem;
@@ -55,6 +55,16 @@ a{
 #main{
 	display: flex;
 	justify-content: space-between;
+	width: 100%;
+	background: #e2e2e2;
+	border-top: 1px solid #e3e3e3;
+}
+.main-l{
+	width: 23%;
+	position: relative;
+	border: 0;
+	overflow: auto;
+	flex-shrink: 0;
 }
 .main-l a{
 	display: flex;
@@ -64,6 +74,7 @@ a{
 	padding: 0 8px;
 	border-bottom: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
+	background: #fff;
 	
 }
 .main-l a span{
@@ -71,32 +82,69 @@ a{
 	color: #000;
 }
 .main-r{
+	width: 4.86rem;
+	overflow: auto;
+	height: 100%;
 }
-.main-r-t>a{
+.main-r>a{
 	display: block;
-	width: 4.62rem;
-	margin: 10px auto 0;
-	
+	margin: 10px auto;
+	width: 4.5rem;
 }
-.main-r-t>a>img{
-	width: 4.4rem;
-	height: 1.493199rem;
-	
+.main-r>a>img{
+	width: 4.48rem;
+	height: 1.48rem;
 }
-#span-t{
-	font-size: 12px;
+.main-r p{
+	font-size: 14px;
 	font-weight: 700;
-	height: 30px;
-	line-height: 30px;
+	padding-left: 5px ;
 }
-.ull{
+.remen{
+	display: flex;
+	flex-wrap: wrap;
+}
+.remen a{
+	width: 33%;
+	padding: 10px 0;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
+}
+.remen a img{
+	width: 80%;
+	display: block;
+	margin-bottom: 5px;
+	vertical-align: top;
+}
+.remen a span{
+	font-size: 12px;
+}
+.gengduo{
+	display: flex;
 	flex-wrap: wrap;
+}
+.gengduo a{
+	width: 33%;
+	padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.gengduo a img{
+	width: 80%;
+	display: block;
+	margin-bottom: 5px;
+	vertical-align: top;
+}
+.gengduo a span{
+	font-size: 12px;
 }
 
 /*footer部分*/
-
+#footer{
+	
+}
 
