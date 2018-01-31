@@ -136,16 +136,83 @@
                 <p>￥59.00</p>
               </div>
             </li>
+            <li>
+              <div class="art">
+                加载全部
+              </div>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
+  <!-- 手机精品 -->
+  <div class="mobile">
+    <h3>手机精品</h3>
+    <div class="age" v-for="item in mobile">
+      <img :src="item.imagePath"/>
+    </div>
+    <div class="age" v-for="item in mobile_A">
+      <img :src="item.imagePath"/>
+    </div>
+    <div class="small" v-for="item in mobile_B">
+      <img :src="item.imagePath"/>
+    </div>
+  </div>
+  <!-- 办公专家 -->
+  <div class="mobile">
+    <h3>办公专家</h3>
+    <div class="age" v-for="item in work">
+      <img :src="item.imagePath"/>
+    </div>
+    <div class="age" v-for="item in work_A">
+      <img :src="item.imagePath"/>
+    </div>
+    <div class="small" v-for="item in work_B">
+      <img :src="item.imagePath"/>
+    </div>
+  </div>
+  <!-- 智能生活 -->
+  <div class="self">
+    <h3>智能生活</h3>
+    <div class="age" v-for="item in self">
+      <img :src="item.imagePath"/>
+    </div>
+    <div class="small" v-for="item in self_A">
+      <img :src="item.imagePath"/>
+    </div>
+  </div>
+  <!-- 发现好货 -->
+  <div class="goods clearfix">
+    <h4>发现好货</h4>
+    <ul class="goodslist">
+      <li v-for = "item in package"> 
+        <div class="listimg">
+          <img :src="item.imagePath">
+        </div>
+        <p class="screen">{{item.sellingPoint}}</p>
+        <div class="price">
+          <p>{{item.title}}</p>
+          <p>{{item.price}}</p>
+        </div>
+      </li>
+      <li v-for = "item in find"> 
+        <div class="listimg">
+          <img :src="item.imagePath">
+        </div>
+        <p class="screen">{{item.sellingPoint}}</p>
+        <div class="price">
+          <p>{{item.title}}</p>
+          <p>{{item.price}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom">footer</div>
 </div>
 </template>
 <script>
 import axios from 'axios'
-// 坑  'axios'  要使用'', 双引号报错Cannot read property 'protocol' of undefinedat isURLSameOrigin
   export default{
     name:'HeaderCom',
     data(){
@@ -153,6 +220,16 @@ import axios from 'axios'
         nav:[],
         more:[],
         picture:[],
+        mobile:[],
+        mobile_A:[],
+        mobile_B:[],
+        work:[],
+        work_A:[],
+        work_B:[],
+        self:[],
+        self_A:[],
+        package:[],
+        find:[],
         flag:0,
         list:[
           {imgs:"https://img2.ch999img.com/newstatic/767/362f5f8da217d7.jpg"},
@@ -167,21 +244,32 @@ import axios from 'axios'
     },
     methods:{
       redBtn:function(index){
-        console.log(this)
-        console.log(index);
         this.flag = index;
         console.log(this.flag);
       }
+
     },
     mounted:function(){
       var that = this;
       axios.get('/web/api/floors/v1?label=0&page=1&random=0')
       .then(function(res){
-        console.log(res);//认真一点
+        console.log(res);
         that.nav = res.data.data.label;
         that.more = res.data.data.container.floor[0].content;
         that.picture = res.data.data.container.floor[4].content;
+        that.mobile = res.data.data.container.floor[6].content;
+        that.mobile_A = res.data.data.container.floor[7].content;
+        that.mobile_B = res.data.data.container.floor[8].content;
+        that.work = res.data.data.container.floor[9].content;
+        that.work_A = res.data.data.container.floor[10].content;
+        that.work_B = res.data.data.container.floor[11].content;
+        that.self = res.data.data.container.floor[12].content;
+        that.self_A = res.data.data.container.floor[13].content;
+        that.package = res.data.data.container.floor[14].content;
+        that.find = res.data.data.container.floor[15].content;
       })
+
+
     }
   }
 </script>
@@ -476,7 +564,8 @@ import axios from 'axios'
 .souji ul li{
   width:2.4rem;
   height:3.95rem;
-  /*background:#ccc;*/
+  font-size:0.40rem;
+  text-align: center;
   margin:0 0.1rem;
   float: left;
 }
@@ -484,6 +573,8 @@ import axios from 'axios'
   width:2.4rem;
   height:2.4rem;
   border:1px solid #ccc;
+  line-height:2.4rem;
+  color:#ccc;
 }
 .souji ul li .art img{
   height:100%;
@@ -503,5 +594,123 @@ import axios from 'axios'
 .souji ul li .fontsize p:nth-child(3){
   color:red;
   line-height:0.38rem;
+}
+.mobile{
+  width:100%;
+  height:6.08rem;
+  background:#fff;
+  float:left;
+  margin-top:0.2rem;
+}
+.self{
+  height:3.93rem;
+  width:100%;
+  background:#fff;
+  float:left;
+  margin-top:0.2rem;
+}
+.mobile h3,.self h3{
+  height:0.74rem;
+  font-size:0.30rem;
+  color:#ac9be9;
+  text-align: center;
+  line-height:0.74rem;
+}
+.mobile .age{
+  width:49.5%;
+  height:2.15rem;
+  float:left;
+}
+.mobile .small{
+  width:50%;
+  height:1.05rem;
+  float:left;
+}
+.self .age{
+  width:24.5%;
+  height:2.15rem;
+  float:left;
+}
+.self .small{
+  width:50%;
+  height:1.05rem;
+  float:left;
+}
+.mobile .age img,.mobile .small img,.self .age img,.self .small img{
+  height:100%;
+}
+/*发现好货*/
+.goods{
+  min-height:6.3rem;
+  _height:6.3rem;
+  background:#f5f5f5;
+  float:left;
+  margin-top:0.2rem;
+}
+.goods h4{
+  width:6.4rem;
+  font-size: 0.28rem;
+  text-align:center;
+  line-height: 0.72rem;
+  border-bottom:1px solid #f8fafc;
+  background:#fff;
+  color:#de3796;
+}
+.goods .goodslist{
+  width:100%;
+  min-height:5.22rem;
+  float:left;
+  border-top: 1px solid #999;
+}
+.goods .goodslist li:nth-child(odd){
+  height:4.4rem;
+  width:49%;
+  background:#fff;
+  margin-bottom:0.2rem;
+  float:left;
+}
+.goods .goodslist li:nth-child(even){
+  height:4.4rem;
+  width:49%;
+  background:#fff;
+  margin-bottom:0.2rem;
+  float:right;
+}
+.goods .goodslist li .listimg{
+  height:3rem;
+  float:left;
+}
+.goods .goodslist li .listimg img{
+  height:100%;
+}
+.goods .goodslist li .screen{
+  float: left;
+  width:87%;
+  height:0.52rem;
+  background: #eaf5fd;
+  font-size: 0.2rem;
+  color:#87abd7;
+  line-height:0.52rem;
+  padding-left:0.4rem;
+}
+.goods .goodslist li .price{
+  font-size: 0.2rem;
+}
+.goods .goodslist li .price p:nth-child(1){
+  padding-left:0.4rem;
+  color:#545454;
+  line-height: 0.42rem;
+}
+.goods .goodslist li .price p:nth-child(2){
+  font-size: 0.26rem;
+  padding-left:0.45rem;
+  color:#c70f1d;
+  line-height: 0.42rem;
+}
+.bottom{
+  width:1rem;
+  height:0.4rem;
+  background:red;
+  font-size:0.7rem;
 }
 </style>
