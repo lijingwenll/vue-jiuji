@@ -1,5 +1,4 @@
 <template>
-  <div class="box">    
     <!-- footer -->
     <div class="btm">
       <ul>
@@ -27,7 +26,6 @@
         </li>
       </ul>
     </div>
-  </div>
 </template>
 <script>
 // import { Navbar, TabItem } from 'mint-ui';
