@@ -2,10 +2,12 @@
     <!-- footer -->
     <div class="btm">
       <ul>
+        <router-link to='/'>
         <li>
           <i class="iconfont icon-shouye1"></i>
           <p>首页</p>
         </li>
+         </router-link>
         <router-link to='/class'>
         <li>
           <i class="iconfont icon-fenlei"></i>
@@ -20,16 +22,16 @@
           <i class="iconfont icon-daohanggouwuche"></i>
           <p>购物车</p>
         </li>
+        <router-link to="/mine" activeClass="act" exact>
         <li>
           <i class="iconfont icon-wode"></i>
           <p>我的</p>
         </li>
+        </router-link>
       </ul>
     </div>
 </template>
 <script>
-// import { Navbar, TabItem } from 'mint-ui';
-// 坑  'axios'  要使用'', 双引号报错Cannot read property 'protocol' of undefinedat isURLSameOrigin
   export default{
     name:'FooterCom',
     data(){
@@ -41,11 +43,9 @@
   }
 </script>
 <style scoped>
-
 .btm{
   width:100%;
   height:1rem;
-  /*background: red;*/
   position:fixed;
   bottom:0;
   left:0;
@@ -63,5 +63,8 @@
   padding:0 0.35rem;
   line-height: 0.5rem;
   text-align: center;
+}
+.act{
+  color:red;
 }
 </style>

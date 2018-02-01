@@ -31,8 +31,8 @@
   </div>
   <div class="more">
     <ul>
-      <li v-for="item in more">
-        <img :src="item.imagePath" alt="图片">
+      <li v-for="items in more">
+        <img :src="items.imagePath" alt="图片">
       </li>
     </ul>
   </div>
@@ -98,9 +98,9 @@
     <div class="btn">
       <img src="https://img2.ch999img.com/newstatic/770/31e93b6aa7a531.jpg">
     </div>
-  </div>
+  </div> 
   <!-- 为你优选 -->
-  <div class="you">
+   <div class="you">
     <h2>为你优选</h2>
     <div class="youlist">
       <div class="iphone">
@@ -145,9 +145,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> 
   <!-- 手机精品 -->
-  <div class="mobile">
+   <div class="mobile">
     <h3>手机精品</h3>
     <div class="age" v-for="item in mobile">
       <img :src="item.imagePath"/>
@@ -158,9 +158,9 @@
     <div class="small" v-for="item in mobile_B">
       <img :src="item.imagePath"/>
     </div>
-  </div>
+  </div> 
   <!-- 办公专家 -->
-  <div class="mobile">
+   <div class="mobile">
     <h3>办公专家</h3>
     <div class="age" v-for="item in work">
       <img :src="item.imagePath"/>
@@ -197,6 +197,7 @@
         </div>
       </li>
       <li v-for = "item in find"> 
+        <router-link :to="{name:'Detail', param:{xid:item.id}}">
         <div class="listimg">
           <img :src="item.imagePath">
         </div>
@@ -205,16 +206,23 @@
           <p>{{item.title}}</p>
           <p>{{item.price}}</p>
         </div>
+        </router-link>
       </li>
     </ul>
   </div>
   <div class="bottom">footer</div>
+  <router-view/>
 </div>
 </template>
 <script>
 import axios from 'axios'
+import Detail from  './Detail'
+
   export default{
     name:'HeaderCom',
+    components: {
+      Detail:Detail,
+    },
     data(){
       return{
         position:"昌平区",
@@ -256,28 +264,29 @@ import axios from 'axios'
       .then(function(res){
         console.log(res);
         that.nav = res.data.data.label;
-        that.more = res.data.data.container.floor[0].content;
+        that.more = res.data.data.container.floor[1].content;
         that.picture = res.data.data.container.floor[4].content;
-        that.mobile = res.data.data.container.floor[6].content;
-        that.mobile_A = res.data.data.container.floor[7].content;
-        that.mobile_B = res.data.data.container.floor[8].content;
-        that.work = res.data.data.container.floor[9].content;
-        that.work_A = res.data.data.container.floor[10].content;
-        that.work_B = res.data.data.container.floor[11].content;
-        that.self = res.data.data.container.floor[12].content;
-        that.self_A = res.data.data.container.floor[13].content;
-        that.package = res.data.data.container.floor[14].content;
-        that.find = res.data.data.container.floor[15].content;
+        that.mobile = res.data.data.container.floor[12].content;
+        that.mobile_A = res.data.data.container.floor[13].content;
+        that.mobile_B = res.data.data.container.floor[14].content;
+
+        that.work = res.data.data.container.floor[16].content;
+        that.work_A = res.data.data.container.floor[17].content;
+        that.work_B = res.data.data.container.floor[18].content;
+
+        that.self = res.data.data.container.floor[20].content;
+        that.self_A = res.data.data.container.floor[21].content;
+
+        that.package = res.data.data.container.floor[23].content;
+        that.find = res.data.data.container.floor[24].content;
       });
           // 定位
-          // var that = this;
        var geolocation = new window.BMap.Geolocation();
         geolocation.getCurrentPosition(function(r){
           if(this.getStatus() == BMAP_STATUS_SUCCESS){
               var geoc = new BMap.Geocoder();    
               geoc.getLocation(r.point, function(rs){
                 var addComp = rs.addressComponents;
-                alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
               that.position= addComp.district;
               
               });
@@ -382,11 +391,14 @@ import axios from 'axios'
   float: left;
 }
 .more ul li{
+  /*width:1.05rem;*/
   height:1.27rem;
   float: left;
   padding-left:0.01rem;
+  overflow:hidden;
 }
 .more ul li img{
+  /*width:100%;*/
   height:100%;
 }
 .time{

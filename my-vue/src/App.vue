@@ -7,13 +7,11 @@
 </template>
 
 <script>
-import IndexPage from  './components/IndexPage'
 import HeaderCom from  './components/HeaderCom'
 
 export default {
   name: 'App',
   components: {
-		IndexPage:IndexPage,
     HeaderCom:HeaderCom,
    }
 }
