@@ -4,7 +4,7 @@
     <!-- 定位 -->
     <div class="pos">
       <div class="area">
-        昌平区
+        {{position}}
         <i class="iconfont icon-xiangxia"></i>
       </div>
       <div class="search">
@@ -217,6 +217,7 @@ import axios from 'axios'
     name:'HeaderCom',
     data(){
       return{
+        position:"昌平区",
         nav:[],
         more:[],
         picture:[],
@@ -267,9 +268,23 @@ import axios from 'axios'
         that.self_A = res.data.data.container.floor[13].content;
         that.package = res.data.data.container.floor[14].content;
         that.find = res.data.data.container.floor[15].content;
-      })
-
-
+      });
+          // 定位
+          // var that = this;
+       var geolocation = new window.BMap.Geolocation();
+        geolocation.getCurrentPosition(function(r){
+          if(this.getStatus() == BMAP_STATUS_SUCCESS){
+              var geoc = new BMap.Geocoder();    
+              geoc.getLocation(r.point, function(rs){
+                var addComp = rs.addressComponents;
+                alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street + ", " + addComp.streetNumber);
+              that.position= addComp.district;
+              
+              });
+          }else {
+            console.log('failed'+this.getStatus());
+          }        
+        },{enableHighAccuracy: true})
     }
   }
 </script>
