@@ -1,39 +1,59 @@
-html,body{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html,
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-ul,li,ol{
+ul,
+li,
+ol {
 	list-style: none;
 }
-a{
+
+a {
 	text-decoration: none;
 }
+
+
 /*nav部分*/
-#nav{
+
+#nav {
 	height: 0.88rem;
+	position: fixed;
+	width: 100%;
+	background-color: #fff;
+	z-index: 1;
+	border-bottom: 1px solid #ccc;
 }
-#nav ul{
+
+#nav ul {
 	display: flex;
 	justify-content: space-around;
 	height: 0.88rem;
 	position: relative;
 }
-#nav ul li{
+
+#nav ul::-webkit-scrollbar {
+	display: none;
+}
+
+#nav ul li {
 	height: 0.88rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
+
 #nav ul li a {
 	display: flex;
 	align-items: center;
 }
-.nav-c{
+
+.nav-c {
 	display: flex;
 	width: 4.60rem;
 	height: 0.66rem;
@@ -42,109 +62,142 @@ a{
 	align-items: center;
 	padding-left: 0.1rem;
 }
-.icon-sousuo{
+
+.icon-sousuo {
 	color: #9c9c9c;
 }
-.icon-houtui,.icon-more{
+
+.icon-houtui,
+.icon-more {
 	color: #000;
 	font-size: 0.4rem;
 	font-weight: 600;
 }
 
-/*main部分*/
-#main{
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
-	background: #e2e2e2;
-	border-top: 1px solid #e3e3e3;
+.ltop{
+	height: 0.88rem;
 }
-.main-l{
+/*main部分*/
+
+#main {
+	display: flex;
+	width: 100%;
+	flex-grow: 1;
+	background: #CACACA;
+}
+
+.main-l {
 	width: 23%;
 	position: relative;
 	border: 0;
 	overflow: auto;
 	flex-shrink: 0;
+	overflow-x: hidden;
+	background: #fff;
 }
-.main-l a{
+
+.main-l a {
 	display: flex;
 	align-items: center;
-	width: 1.2rem;
 	height: 1rem;
 	padding: 0 8px;
 	border-bottom: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
 	background: #fff;
-	
 }
-.main-l a span{
+
+.main-l a span {
 	font-size: 14px;
 	color: #000;
 }
-.main-r{
-	width: 4.86rem;
+
+.main-r {
+	width: 76.5%;
 	overflow: auto;
-	height: 100%;
+	background: #F0F0F0;
 }
-.main-r>a{
+
+.main-r>a {
 	display: block;
-	margin: 10px auto;
+	margin: 10px auto 0;
 	width: 4.5rem;
 }
-.main-r>a>img{
+
+.main-r>a>img {
 	width: 4.48rem;
 	height: 1.48rem;
 }
-.main-r p{
+
+.main-r p {
 	font-size: 14px;
 	font-weight: 700;
-	padding-left: 5px ;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	padding-left: 10px;
 }
-.remen{
+.main-r-t{
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #fff;
+	width: 224px;
+	margin: 0 auto;
+}
+.remen {
 	display: flex;
 	flex-wrap: wrap;
 }
-.remen a{
+
+.remen a {
 	width: 33%;
 	padding: 10px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	color: #000;
 }
-.remen a img{
+
+.remen a img {
 	width: 80%;
 	display: block;
 	margin-bottom: 5px;
 	vertical-align: top;
 }
-.remen a span{
+
+.remen a span {
 	font-size: 12px;
 }
-.gengduo{
+
+.gengduo {
 	display: flex;
 	flex-wrap: wrap;
+	background-color: #fff;
+	margin: 0 auto;
+	width: 224px;
 }
-.gengduo a{
+
+.gengduo a {
 	width: 33%;
 	padding: 10px 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	color: #000;
 }
-.gengduo a img{
+
+.gengduo a img {
 	width: 80%;
 	display: block;
 	margin-bottom: 5px;
 	vertical-align: top;
 }
-.gengduo a span{
+
+.gengduo a span {
 	font-size: 12px;
+}
+.lbom{
+	height: 1rem;
 }
 
 /*footer部分*/
-#footer{
-	
-}
-
