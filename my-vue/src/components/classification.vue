@@ -1,4 +1,5 @@
 <template>
+<div id="classif">
 	<div id="nav">
 		<ul>
 			<li>
@@ -17,60 +18,24 @@
 				</a>
 			</li>		
 		</ul>
+	</div>
+	<p class="ltop"></p>
 		<div id="main">
 			<div class="main-l">
-				<a href="">
-					<span>
-						手机通讯
-					</span>
+				<a href="" v-for="item in classi">
+					<span>{{item.title}}</span>
 				</a>
 				<a href="">
-					<span>
-						手机配件
-					</span>
-				</a>
-				<a href="">
-					<span>
-						电脑办公
-					</span>
-				</a>
-				<a href="">
-					<span>
-						智能穿戴
-					</span>
-				</a>
-				<a href="">
-					<span>
-						数码影音
-					</span>
-				</a>
-				<a href="">
-					<span>
-						智能家居
-					</span>
-				</a>
-				<a href="">
-					<span>
-						智能出行
-					</span>
-				</a>
-				<a href="">
-					<span>
-						娱乐竞技
-					</span>
-				</a>
-				<a href="">
-					<span>
-						智能健康
-					</span>
+					<span></span>
 				</a>
 			</div>
 			<div class="main-r">
 				<a href="">
 					<img src="https://img2.ch999img.com/pic/category/201801250920590.jpg.webp"/>
 				</a>
+				<p>热门品牌</p>
 				<div class="main-r-t">
-					<p>热门品牌</p>
+					
 					<div class="remen">
 						<a href="" v-for="item in picsmallt">
 							<img :src="item.picture"/>
@@ -88,6 +53,7 @@
 				</div>
 			</div>
 		</div>
+		<p class="lbom"></p>
 	</div>
 </template>
 <script>
@@ -97,8 +63,10 @@
 		  name: 'Classification',
 		  data(){
 		  	return{
+		  		picbig:[],
 		  		picsmallt:[],
 		  		picsmallb:[],
+		  		classi:[],
 		  	}
 		},
 		mounted:function(){
@@ -109,13 +77,14 @@
 				that.picbig = res.data.data[0];
 				that.picsmallt = res.data.data[0].children[0].children;
 				that.picsmallb = res.data.data[0].children[1].children;
-				console.log(that.picsmallb)
+				that.classi = res.data.data;
+				that.classif = res.data.data[0].children;
+				
+				console.log(that.classif)
 			})
 		}
 	}
 </script>
-
-
 <style scoped>
 @import '../assets/css/classification.css';
 @import '../assets/css/reset.css';
