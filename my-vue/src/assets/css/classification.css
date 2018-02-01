@@ -63,7 +63,7 @@ a{
 	width: 23%;
 	position: relative;
 	border: 0;
-	overflow: auto;
+	overflow-x: hidden;
 	flex-shrink: 0;
 }
 .main-l a{
