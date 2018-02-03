@@ -197,7 +197,7 @@
         </div>
       </li>
       <li v-for = "item in find"> 
-        <router-link :to="{name:'Detail', param:{xid:item.id}}">
+        <router-link to="/detail">
         <div class="listimg">
           <img :src="item.imagePath">
         </div>

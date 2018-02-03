@@ -18,7 +18,7 @@ export default new Router({
       component: HeaderCom
     },
     {
-      path: '/detail/:xid',
+      path: '/detail',
       name: 'Detail',
       component: Detail
     },
